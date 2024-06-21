@@ -1,0 +1,31 @@
+<div class="buttons-container">
+  <button
+    class="btn btn-outline-secondary"
+    [disabled]="isFirstPage()"
+    (click)="onPrevPage()"
+  >
+    <i class="bi bi-arrow-left"></i> Previous
+  </button>
+  @if(infoPage) {
+
+  <div>Page {{ currPage || 0 }}/{{ infoPage.pages }}</div>
+  }
+  <button
+    [disabled]="isLastPage()"
+    class="btn btn-outline-secondary"
+    (click)="onNextPage()"
+  >
+    Next <i class="bi bi-arrow-right"></i>
+  </button>
+</div>
+
+<div class="row">
+  @for(char of charList; track char.id) {
+  <div class="col-md-3 col-sm-12 mb-3">
+    <app-character-card
+      [character]="char"
+      (goToDetails)="onGoToDetailsPage($event)"
+    ></app-character-card>
+  </div>
+  }
+</div>

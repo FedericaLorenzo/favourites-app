@@ -1,0 +1,15 @@
+<div class="buttons-container">
+  <button class="btn btn-outline-secondary" (click)="onGoBack()">
+    <i class="bi bi-arrow-left"></i> Back to dashboard
+  </button>
+</div>
+<div class="row">
+  @for(char of charList; track char.id) {
+  <div class="col-md-3 col-sm-12 mb-3">
+    <app-character-card
+      [character]="char"
+      (goToDetails)="onGoToDetailsPage($event)"
+    ></app-character-card>
+  </div>
+  }
+</div>

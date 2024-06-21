@@ -1,0 +1,11 @@
+<div class="card h-100">
+  <img [src]="character.image" class="card-img-top" [alt]="character.name" />
+  <div class="card-body">
+    <h5 class="card-title">{{ character.name }}</h5>
+    <p class="card-text">Specie {{ character.species }}</p>
+    <p class="card-text">Genere {{ character.gender }}</p>
+    <button class="btn btn-primary" (click)="onGoToDetails()">
+      Character Detail
+    </button>
+  </div>
+</div>
